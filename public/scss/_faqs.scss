@@ -1,0 +1,412 @@
+/*** 
+
+====================================================================
+    FAQ's Section
+====================================================================
+
+***/
+
+.faq-section {
+	position: relative;
+	padding: 120px 0 70px;
+    .icon-plane-4 {
+        position: absolute;
+        bottom: -140px;
+        left: 20px;
+    }
+    .faq-column{
+        margin-bottom: 50px;
+        .inner-column {
+            position: relative;
+            padding: 60px 0;
+            padding-left: 95px;
+            @include media-breakpoint-down(xl){
+                padding-left: 40px;
+            }
+            @include media-breakpoint-down(sm){
+                padding: 0;
+            }
+            &:before {
+                content: '';
+                @include overlay;
+                width: 315px;
+                height: 100%;
+                border-top: 5px solid var(--theme-color2);
+                border-bottom: 5px solid var(--theme-color2);
+                border-left: 5px solid var(--theme-color2);
+                @include media-breakpoint-down(sm){
+                    display: none;
+                }
+            }
+            .sec-title {
+                .sub-title {
+                    margin-bottom: 5px;
+                }
+                margin-bottom: 20px;
+            }
+        }
+        .accordion-box{
+            max-width: 370px;
+        }
+    }
+
+    .image-column{
+        margin-bottom: 50px;
+        .inner-column {
+            padding-top: 35px;
+            padding-left: 30px;
+            @include media-breakpoint-down(lg){
+                padding: 0;
+                text-align: center;
+            }
+            @include media-breakpoint-down(sm){
+                margin-bottom: 40px;
+            }
+            .image-box {
+                position: relative;
+                .rating-box {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 229px;
+                    height: 100px;
+                    border: 3px solid var(--theme-color1);
+                    background-color: var(--theme-color-light);
+                    text-align: center;
+                    transform: translate(38px, 46px);
+                    @include media-breakpoint-down(lg){
+                        left: 50px;
+                    }
+                    @include media-breakpoint-down(md){
+                        position: relative;
+                        left: 0;
+                        width: 100%;
+                        transform: none;
+                        margin-top: 30px;
+                    }
+                    .icon {
+                        position: absolute;
+                        width: 51px;
+                        height: 51px;
+                        line-height: 51px;
+                        border-radius: 50%;
+                        background: var(--theme-color1);
+                        color: var(--theme-color-light);
+                        font-size: 24px;
+                        text-align: center;
+                        transform: translate(-30px, -31px);
+                    }
+                    .rating{
+                        padding-top: 18px;
+                        li{
+                            display: inline-block;
+                            color: #f9b524;
+                            font-size: 12px;
+                            margin: 0 2px;
+                        }
+                    }
+                    .reviews {
+                        margin-bottom: 0;
+                        font-size: 18px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.accordion-box {
+	position: relative;
+	.block {
+		position: relative;
+        background-color: var(--theme-color-light);
+        border-bottom: 1px solid #e1e1e1;
+		.acc-btn {
+			position: relative;
+			font-size: 18px;
+			line-height: 24px;
+			color: var(--theme-color-dark);
+			font-weight: 500;
+			cursor: pointer;
+            @include text-font;
+			padding: 15px 20px 15px 40px;
+            letter-spacing: -.01em;
+			transition: all 500ms ease;
+            .icon{
+                position: absolute;
+                top: 15px;
+                left: 0;
+                line-height: 28px;
+                color: var(--theme-color1);
+                font-size: 24px;
+                @include transition(all 300ms ease);
+            }
+			.arrow {
+				position: absolute;
+				right: 15px;
+				top: -1px;
+				font-size: 14px;
+				line-height: 56px;
+                font-weight: 800;
+				color: var(--theme-color-dark);
+				text-align: center;
+                @include transition(all 300ms ease);
+			}
+		}
+		.acc-btn.active {
+			color: var(--theme-color1);
+			.arrow {
+                font-size: 14px;
+                color: var(--theme-color-dark);
+				transform: rotate(180deg);
+				&:before {
+					content: "\f106";
+				}
+			}
+            .icon{
+                transform: scale(-1) rotate(180deg);
+            }
+		}
+		.acc-content {
+			position: relative;
+			display: none;
+			.content {
+				position: relative;
+				padding: 0px 30px 17px;
+				.text {
+					display: block;
+					font-size: 14px;
+					margin-bottom: 0;
+				}
+			}
+		}
+		.acc-content.current {
+			display: block;
+		}
+	}
+	&.style-two{
+        .block {
+            position: relative;
+            border: none;
+            width: 100%;
+            padding: 7px 17px 10px;
+            margin-bottom: 12px;
+            box-shadow: 0  0 43px rgba(0, 0, 0, 0.06);
+            background-color: var(--theme-color-light);
+            @include media-breakpoint-down(lg){
+                padding: 7px 10px 10px;
+            }
+            .acc-btn {
+                padding-left: 92px;
+                font-weight: 700;
+                @include media-breakpoint-down(sm){
+                    padding-left: 70px;
+                }
+            }
+            .arrow {
+                right: 4px;
+            }
+            .content {
+                padding: 10px 0 10px;
+                .text {
+                    font-size: 16px;
+                    line-height: 30px;
+                    letter-spacing: -.01em;
+                    color: #7a7a7a;
+                    @include media-breakpoint-down(lg){
+                        line-height: 24px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+            .acc-btn.active {
+                color: var(--theme-color1);
+                .arrow,
+                .icon {
+                    color: var(--theme-color1);
+                }
+                .count {
+                    background-color: var(--theme-color1);
+                    color: var(--theme-color-light);
+                }
+            }
+        }
+        .count {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 57px;
+            height: 57px;
+            line-height: 57px;
+            color: #a6a6a6;
+            background-color: #f2f3f6;
+            text-align: center;
+            @include media-breakpoint-down(sm){
+                top: 5px;
+            }
+        }
+	}
+}
+
+/*** 
+
+====================================================================
+    FAQ's Section Two
+====================================================================
+
+***/
+
+.faq-section-two {
+	position: relative;
+	padding: 120px 0 70px;
+    .float-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include media-breakpoint-down(xl){
+            opacity: .3;
+        }
+    }
+    
+    .faq-column{
+        margin-bottom: 50px;
+        .inner-column {
+            padding-left: 35px;
+            padding-right: 75px;
+            @include media-breakpoint-down(xxl){
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .sec-title {
+                margin-bottom: 40px;
+                @include media-breakpoint-down(xl){
+                    margin-bottom: 20px;
+                }
+            }
+            .acc-btn {
+                padding-left: 75px;
+            }
+            .text {
+                font-size: 16px;
+                letter-spacing: -.01em;
+            }
+        }
+    }
+
+    .form-column {
+        position: relative;
+        .bg-image{
+            left: -375px;
+            &:before {
+                content: '';
+                @include overlay;
+                background-color: var(--theme-color2);
+                opacity: .9;
+            }
+        }
+        .contact-form-two {
+            padding: 56px 45px 90px;
+            @include media-breakpoint-down(md){
+                padding: 40px 30px 20px;
+            }
+            .title {
+                font-size: 36px;
+                letter-spacing: -.01em;
+            }
+            .row {
+                margin: 0 -15px;
+                >div {
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+    &.style-two {
+        .bg {
+            &:before {
+                content: '';
+                @include overlay;
+                background-color: #232331;
+                opacity: .9;
+            }
+        }
+        .contact-form-two {
+            padding: 56px 45px 60px;
+            @include media-breakpoint-down(sm){
+                padding: 40px 30px 30px;
+            }
+        }
+        .icon-plane-8 {
+            position: absolute;
+            bottom: 50px;
+            right: 45px;
+        }
+        .faq-column {
+            .inner-column {
+                margin-left: 70px;
+                padding-right: 0;
+                @include media-breakpoint-down(xl){
+                    margin-left: 0;
+                }
+                .sec-title {
+                    .sub-title {
+                        border-color: rgba(255, 255, 255, .2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Contact Form
+.contact-form-two {
+    position: relative;
+    background-color: var(--theme-color1);
+    overflow: hidden;
+    padding: 56px 40px 90px;
+    @include media-breakpoint-down(xl){
+        padding: 50px 20px;
+    }
+    .title{
+        color: var(--theme-color-light);
+        margin-bottom: 45px;
+        text-align: center;
+    }
+    .form-group {
+        position: relative;
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .select2-container--default .select2-selection--single,
+    input:not([type="submit"]),
+    textarea,
+    select {
+        position: relative;
+        display: block;
+        height: 60px;
+        width: 100%;
+        padding: 20px 20px;
+        font-size: var(--body-font-size);
+        color: var(--theme-color-dark);
+        line-height: 32px;
+        font-weight: 400;
+        background-color: var(--theme-color-light);
+        border: 1px solid transparent;
+        border-radius: 7px;
+        margin-bottom: 0;
+        @include transition(all 300ms ease);
+    }
+    ::-webkit-input-placeholder {color: #393939;}
+    input:focus,
+    select:focus,
+    textarea:focus {
+        border-color: var(--theme-color-dark);
+    }
+    .theme-btn {
+        background-color: var(--theme-color-dark);
+        width: 100%;
+    }
+}

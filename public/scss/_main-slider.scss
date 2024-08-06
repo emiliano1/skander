@@ -1,0 +1,103 @@
+/*** 
+
+====================================================================
+  Main Slider
+====================================================================
+
+***/
+
+.main-slider {
+  position: relative;
+  min-height: 940px;
+  @include media-breakpoint-down(lg){
+    text-align: center;
+    min-height: auto;
+    margin-bottom: 0;
+  }
+  .sub-title{
+      position: relative;
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 26px;
+      padding: 3px 45px 7px;
+      margin-bottom: 40px;
+      min-width: 326px;
+      letter-spacing: -.01em;
+      color: var(--theme-color-light);
+      background-image: url(../images/banner/bg-subtitle.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      @include media-breakpoint-down(lg){
+        background-image: none;
+        padding: 0;
+        color: var(--theme-color1);
+        background-color: var(--theme-color-light);
+        display: inline-block !important;
+        min-width: auto;
+        padding: 5px 14px;
+        border-radius: 10px;
+      }
+      @include media-breakpoint-down(sm){
+        font-size: 14px;
+      }
+  }
+  .icon-big-arrow {
+    position: absolute;
+    bottom: 80px;
+    left: -65px;
+    z-index: 2;
+    @include media-breakpoint-down(lg){
+      display: none;
+    }
+  }
+  .icon-plane-1 {
+    @include media-breakpoint-down(lg){
+      display: none;
+    }
+  }
+  .title{
+      position: relative;
+      color: var(--theme-color-light);
+      line-height: 90px;
+      font-size: 72px;
+      margin-bottom: 28px;
+      @include media-breakpoint-down(lg){
+          font-size: 64px;
+          line-height: 1.2em;
+      }
+      @include media-breakpoint-down(md){
+          font-size: 50px;
+      }
+      @include media-breakpoint-down(sm){
+          font-size: 34px;
+      }
+  }
+  .theme-btn {
+    @include media-breakpoint-down(lg){
+      padding: 10px 30px;
+      line-height: 30px;
+    }
+  }
+}
+
+.main-slider .tp-dottedoverlay {
+  &:before {
+    content: "";
+    @include overlay;
+      z-index: 1;
+  }
+  &:after {
+      content: '';
+      @include overlay;
+      top: auto;
+      bottom: 0;
+      height: 216px;
+      background-image: url(../images/banner/shape.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      @include media-breakpoint-down(lg){
+        display: none;
+      }
+  }
+}
